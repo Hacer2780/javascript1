@@ -1,0 +1,158 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: hidden; /* Resimlerin taşmasını engeller */
+}
+
+.slider-elements {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Başlangıçta tüm slide'ları gizle */
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center; /* Dikey ortalama */
+  justify-content: center; /* Yatay ortalama */
+  text-align: center;
+}
+
+.slider-item.active {
+  opacity: 1; /* Sadece aktif olan görünecek */
+}
+
+.slider-image img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center; /* Resmi tam ortala */
+}
+
+.slider-item .container {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Metnin okunmasını kolaylaştırmak için */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.slider-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.slider-heading {
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.slider-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 30px;
+}
+
+.slider-buttons button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #dee0ea;
+  background: rgba(255, 255, 255, 0.6);
+  transition: 0.2s ease all;
+}
+
+.slider-buttons button:hover {
+  background-color: #1367ef;
+  color: #fff;
+}
+
+.slider-buttons button i {
+  font-size: 30px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.slider-dot {
+  border: none;
+  opacity: 0.5;
+  transition: 0.2s ease opacity;
+}
+
+.slider-dot:hover,
+.slider-dot.active {
+  opacity: 1;
+}
+
+.slider-dot span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #1367ef;
+  border-radius: 50%;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .slider {
+    height: 50vh;
+  }
+
+  .slider-item {
+    height: 50vh;
+    align-items: flex-end; /* Mobilde metni biraz daha aşağı indir */
+  }
+
+  .slider-item .container {
+    bottom: 10%;
+    width: 90%;
+    padding: 10px;
+  }
+
+  .slider-heading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item .container {
+    bottom: 5%; /* Küçük ekranlarda daha aşağıda */
+  }
+
+  .slider-heading {
+    font-size: 24px;
+  }
+
+  .slider-dots {
+    bottom: 2%;
+  }
+}
