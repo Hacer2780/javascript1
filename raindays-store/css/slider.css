@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: 85vh;
-  overflow: hidden; /* Resimlerin taşmasını engeller */
+  overflow: hidden; 
 }
 
 .slider-elements {
@@ -17,23 +17,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; /* Başlangıçta tüm slide'ları gizle */
+  opacity: 0; 
   transition: opacity 1s ease-in-out;
   display: flex;
-  align-items: center; /* Dikey ortalama */
-  justify-content: center; /* Yatay ortalama */
+  align-items: center; 
+  justify-content: center; 
   text-align: center;
 }
 
 .slider-item.active {
-  opacity: 1; /* Sadece aktif olan görünecek */
+  opacity: 1; 
 }
 
 .slider-image img {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  object-position: center; /* Resmi tam ortala */
+  object-position: center; 
 }
 
 .slider-item .container {
@@ -45,7 +45,7 @@
   width: 80%;
   max-width: 700px;
   color: white;
-  background: rgba(0, 0, 0, 0.5); /* Metnin okunmasını kolaylaştırmak için */
+  background: rgba(0, 0, 0, 0.5); 
   padding: 20px;
   border-radius: 10px;
 }
@@ -121,7 +121,6 @@
   border-radius: 50%;
 }
 
-/* Mobil uyumluluk */
 @media (max-width: 768px) {
   .slider {
     height: 50vh;
@@ -129,7 +128,7 @@
 
   .slider-item {
     height: 50vh;
-    align-items: flex-end; /* Mobilde metni biraz daha aşağı indir */
+    align-items: flex-end; 
   }
 
   .slider-item .container {
@@ -145,7 +144,7 @@
 
 @media (max-width: 480px) {
   .slider-item .container {
-    bottom: 5%; /* Küçük ekranlarda daha aşağıda */
+    bottom: 5%; 
   }
 
   .slider-heading {

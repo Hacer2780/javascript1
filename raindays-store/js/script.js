@@ -1,6 +1,4 @@
-console.log("script.js is working!");
 
-// Function to fetch products from API
 async function fetchProducts() {
     try {
         const response = await fetch("https://v2.api.noroff.dev/rainy-days");
@@ -15,7 +13,6 @@ async function fetchProducts() {
     }
 }
 
-// Function to display products on the page
 async function displayProducts() {
     const products = await fetchProducts();
     const productContainer = document.getElementById("product-list");
@@ -39,13 +36,11 @@ async function displayProducts() {
     });
 }
 
-// Function to get product ID from URL
 function getProductIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return params.get("id");
 }
 
-// Function to fetch a single product from API
 async function fetchProduct(productId) {
     try {
         const response = await fetch(`https://v2.api.noroff.dev/rainy-days/${productId}`);
@@ -60,7 +55,6 @@ async function fetchProduct(productId) {
     }
 }
 
-// Function to display product details on product page
 async function displayProduct() {
     const productId = getProductIdFromURL();
     if (!productId) {
@@ -89,7 +83,6 @@ async function displayProduct() {
     `;
 }
 
-// Function to add a product to the cart
 function addToCart(id, title, price) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push({ id, title, price });
@@ -97,18 +90,16 @@ function addToCart(id, title, price) {
     alert(`${title} has been added to the cart!`);
 }
 
-// Function to get cart items from localStorage
 function getCartItems() {
     return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
-// Function to display cart items on the checkout page
 function displayCart() {
     const cartItems = getCartItems();
     const cartContainer = document.getElementById("cart-items");
     const totalPriceElement = document.getElementById("total-price");
 
-    cartContainer.innerHTML = ""; // Clear previous content
+    cartContainer.innerHTML = ""; 
 
     if (cartItems.length === 0) {
         cartContainer.innerHTML = "<p>Your cart is empty.</p>";
@@ -134,7 +125,6 @@ function displayCart() {
     totalPriceElement.textContent = totalPrice;
 }
 
-// Function to remove an item from the cart
 function removeFromCart(itemId) {
     let cartItems = getCartItems();
     cartItems = cartItems.filter(item => item.id !== itemId);
@@ -142,22 +132,18 @@ function removeFromCart(itemId) {
     displayCart();
 }
 
-// Function to handle checkout
 function checkout() {
     alert("Thank you for your purchase! Your order has been placed.");
-    localStorage.removeItem("cart"); // Clear the cart
+    localStorage.removeItem("cart"); 
 
-    // Redirect to the order confirmation page
     window.location.href = "confirmation/index.html";
 }
 
-// Event listener for checkout button (only on checkout page)
 const checkoutButton = document.getElementById("checkout-button");
 if (checkoutButton) {
     checkoutButton.addEventListener("click", checkout);
 }
 
-// Display all products when the page loads
 document.addEventListener("DOMContentLoaded", () => {
     const productPage = document.getElementById("product-details");
     if (productPage) {

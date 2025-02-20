@@ -1,61 +1,91 @@
-console.log("checkout.js is working!");
+console.log("checkout.js is working!"); 
 
-// Function to get cart items from localStorage
-function getCartItems() {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-}
-
-// Function to display cart items on the checkout page
-function displayCart() {
-    const cartItems = getCartItems();
-    const cartContainer = document.getElementById("cart-items");
+function displayCheckoutSummary() {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const summaryContainer = document.getElementById("order-summary-items");
+    const subtotalElement = document.getElementById("subtotal");
+    const shippingCostElement = document.getElementById("shipping-cost");
     const totalPriceElement = document.getElementById("total-price");
 
-    cartContainer.innerHTML = ""; // Clear previous content
-
-    if (cartItems.length === 0) {
-        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-        totalPriceElement.textContent = "0";
+    if (!summaryContainer) {
+        console.error("Error: 'order-summary-items' not found!");
         return;
     }
 
-    let totalPrice = 0;
+    summaryContainer.innerHTML = "";
+    let subtotal = 0;
 
     cartItems.forEach(item => {
-        const itemElement = document.createElement("div");
-        itemElement.classList.add("cart-item");
-        itemElement.innerHTML = `
-            <p><strong>${item.title}</strong></p>
-            <p>Price: ${item.price} NOK</p>
-            <button onclick="removeFromCart('${item.id}')">Remove</button>
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${item.title}</td>
+            <td>$${item.price.toFixed(2)}</td>
         `;
-        cartContainer.appendChild(itemElement);
-
-        totalPrice += item.price;
+        summaryContainer.appendChild(row);
+        subtotal += item.price;
     });
 
-    totalPriceElement.textContent = totalPrice;
+    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    const shippingCost = subtotal >= 200 ? 0 : 20;
+    shippingCostElement.textContent = shippingCost === 0 ? "Free" : `$${shippingCost.toFixed(2)}`;
+
+    totalPriceElement.textContent = `$${(subtotal + shippingCost).toFixed(2)}`;
 }
 
-// Function to remove an item from the cart
-function removeFromCart(itemId) {
-    let cartItems = getCartItems();
-    cartItems = cartItems.filter(item => item.id !== itemId);
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-    displayCart();
+function placeOrder(event) {
+    event.preventDefault(); 
+
+    const fullName = document.getElementById("full-name").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const postalCode = document.getElementById("postal-code").value.trim();
+    const cardNumber = document.getElementById("card-number").value.trim();
+    const expiry = document.getElementById("expiry").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
+
+    if (!fullName || !address || !city || !postalCode || !cardNumber || !expiry || !cvv) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    localStorage.removeItem("cart");
+
+    const modal = document.getElementById("thank-you-modal");
+    if (modal) {
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden"; 
+    } else {
+        console.error("Error: 'thank-you-modal' not found!");
+    }
 }
 
-// Function to handle checkout
-function checkout() {
-    alert("Thank you for your purchase! Your order has been placed.");
-    localStorage.removeItem("cart"); // Clear the cart
-
-    // Redirect to the order confirmation page
-    window.location.href = "confirmation/index.html";
+function closeModal() {
+    const modal = document.getElementById("thank-you-modal");
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; 
+    }
 }
 
-// Event listener for checkout button
-document.getElementById("checkout-button").addEventListener("click", checkout);
+function goToHome() {
+    window.location.href = "../index.html"; 
+}
 
-// Display cart items when the page loads
-document.addEventListener("DOMContentLoaded", displayCart);
+document.addEventListener("DOMContentLoaded", function () {
+    displayCheckoutSummary();
+
+    const checkoutButton = document.getElementById("place-order");
+    if (checkoutButton) {
+        checkoutButton.addEventListener("click", placeOrder);
+    }
+
+    const closeButton = document.getElementById("close-modal");
+    if (closeButton) {
+        closeButton.addEventListener("click", closeModal);
+    }
+
+    const goHomeButton = document.getElementById("go-home");
+    if (goHomeButton) {
+        goHomeButton.addEventListener("click", goToHome);
+    }
+});

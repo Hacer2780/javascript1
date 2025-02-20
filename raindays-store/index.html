@@ -228,15 +228,35 @@
     </section>
     <!-- ! Slider End -->
 
-    <main>
-      <!-- Ürün Listesi -->
-      <div class="container">
-        <section id="product-list-section">
-          <h2>Products</h2>
-          <div class="category-list " id="product-list"></div>
-        </section>
+    <!-- !Filter Options Start -->
+    <div class="container">
+      <div class="filter-and-products">
+        <div class="filters">
+          <h2>Find Your Perfect Jacket</h2>
+          <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+          </select>
+          <select id="type-filter">
+            <option value="all">All Types</option>
+            <option value="rain">Rain Jackets</option>
+            <option value="wind">Windbreakers</option>
+          </select>
+        </div>
+
+        <!-- ! API product -->
+        <div class="api-products">
+          <section id="product-list-section">
+            <h2>Products</h2>
+            <div class="category-list" id="product-list"></div>
+          </section>
+        </div>
       </div>
-    </main>
+    </div>
+
+    <!-- !Filter Options End -->
+
 
     <!-- ! policy start -->
     <section class="policy">

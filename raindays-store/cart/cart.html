@@ -175,127 +175,129 @@
       </div>
     </header>
     <!-- !header end -->
-
-    <!-- ! cart start -->
-    <section class="cart-pages">
-      <div class="container">
-        <div class="cart-page-wrapper">
-          <form class="cart-form">
-            <div class="free-progress-bar">
-              <p class="progress-bar-title">
-                Add <strong id="free-shipping-amount">$200.00</strong> to cart
-                and get free shipping!
-              </p>
-              <div class="progress-bar">
-                <span class="progress" id="shipping-progress"></span>
-              </div>
-            </div>
-            <div class="shop-table-wrapper">
-              <table class="shop-table">
-                <thead>
-                  <th class="product-thumbnail">&nbsp;</th>
-                  <th class="product-thumbnail">&nbsp;</th>
-                  <th class="product-name">Product</th>
-                  <th class="product-price">Price</th>
-                  <th class="product-quantity">Quantity</th>
-                  <th class="product-subtotal">Subtotal</th>
-                </thead>
-                <tbody class="cart-wrapper" id="cart-items">
-                  <!-- Ürünler buraya JavaScript ile eklenecek -->
-                </tbody>
-              </table>
-              <div class="actions-wrapper">
-                <div class="coupon">
-                  <input
-                    type="text"
-                    class="input-text"
-                    placeholder="Coupon code"
-                  />
-                  <button class="btn">Apply Coupon</button>
-                </div>
-                <div class="update-cart">
-                  <button class="btn" id="update-cart">Update Cart</button>
+     
+    <main>
+      <!-- ! cart start -->
+      <section class="cart-pages">
+        <div class="container">
+          <div class="cart-page-wrapper">
+            <form class="cart-form">
+              <div class="free-progress-bar">
+                <p class="progress-bar-title">
+                  Add <strong id="free-shipping-amount">$200.00</strong> to cart
+                  and get free shipping!
+                </p>
+                <div class="progress-bar">
+                  <span class="progress" id="shipping-progress"></span>
                 </div>
               </div>
-            </div>
-          </form>
-          <div class="cart-collaterals">
-            <div class="cart-totals">
-              <h2>Cart Totals</h2>
-              <table>
-                <tbody>
-                  <tr class="cart-subtotal">
-                    <th>Subtotal</th>
-                    <td><span id="subtotal">$0.00</span></td>
-                  </tr>
-                  <tr>
-                    <th>Shipping</th>
-                    <td>
-                      <ul>
-                        <li>
-                          <label>
-                            Fast Cargo: <span id="shipping-cost">$20.00</span>
-                            <input type="checkbox" />
-                          </label>
-                        </li>
-                        <a href="#">Change Address</a>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Total</th>
-                    <td><strong id="total-price">$0.00</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="checkout">
-                <button class="btn btn-lg" id="checkout-button">
-                  Proceed to checkout
-                </button>
+              <div class="shop-table-wrapper">
+                <table class="shop-table">
+                  <thead>
+                    <th class="product-thumbnail">&nbsp;</th>
+                    <th class="product-thumbnail">&nbsp;</th>
+                    <th class="product-name">Product</th>
+                    <th class="product-price">Price</th>
+                    <th class="product-quantity">Quantity</th>
+                    <th class="product-subtotal">Subtotal</th>
+                  </thead>
+                  <tbody class="cart-wrapper" id="cart-items">
+                    <!-- Ürünler buraya JavaScript ile eklenecek -->
+                  </tbody>
+                </table>
+                <div class="actions-wrapper">
+                  <div class="coupon">
+                    <input
+                      type="text"
+                      class="input-text"
+                      placeholder="Coupon code"
+                    />
+                    <button class="btn">Apply Coupon</button>
+                  </div>
+                  <div class="update-cart">
+                    <button class="btn" id="update-cart">Update Cart</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="cart-collaterals">
+              <div class="cart-totals">
+                <h2>Cart Totals</h2>
+                <table>
+                  <tbody>
+                    <tr class="cart-subtotal">
+                      <th>Subtotal</th>
+                      <td><span id="subtotal">$0.00</span></td>
+                    </tr>
+                    <tr>
+                      <th>Shipping</th>
+                      <td>
+                        <ul>
+                          <li>
+                            <label>
+                              Fast Cargo: <span id="shipping-cost">$20.00</span>
+                              <input type="checkbox" />
+                            </label>
+                          </li>
+                          <a href="#">Change Address</a>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Total</th>
+                      <td><strong id="total-price">$0.00</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="checkout">
+                  <button class="btn btn-lg" id="checkout-button">
+                    Proceed to checkout
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- ! cart end -->
+      </section>
+      <!-- ! cart end -->
 
-    <!-- ! policy start -->
-    <section class="policy">
-      <div class="container">
-        <ul class="policy-list">
-          <li class="policy-item">
-            <i class="bi bi-truck"></i>
-            <div class="policy-texts">
-              <strong>FREE DELIVERY</strong>
-              <span> From $49.00</span>
-            </div>
-          </li>
-          <li class="policy-item">
-            <i class="bi bi-headset"></i>
-            <div class="policy-texts">
-              <strong>SUPPORT 24/7</strong>
-              <span>Simply return it within 30 days</span>
-            </div>
-          </li>
-          <li class="policy-item">
-            <i class="bi bi-credit-card"></i>
-            <div class="policy-texts">
-              <strong>30 DAYS RETURN</strong>
-              <span>Secure Payment</span>
-            </div>
-          </li>
-          <li class="policy-item">
-            <i class="bi bi-truck"></i>
-            <div class="policy-texts">
-              <strong>PAYMENT METHOD</strong>
-              <span>Secure Payment</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <!-- ! policy end -->
+      <!-- ! policy start -->
+      <section class="policy">
+        <div class="container">
+          <ul class="policy-list">
+            <li class="policy-item">
+              <i class="bi bi-truck"></i>
+              <div class="policy-texts">
+                <strong>FREE DELIVERY</strong>
+                <span> From $49.00</span>
+              </div>
+            </li>
+            <li class="policy-item">
+              <i class="bi bi-headset"></i>
+              <div class="policy-texts">
+                <strong>SUPPORT 24/7</strong>
+                <span>Simply return it within 30 days</span>
+              </div>
+            </li>
+            <li class="policy-item">
+              <i class="bi bi-credit-card"></i>
+              <div class="policy-texts">
+                <strong>30 DAYS RETURN</strong>
+                <span>Secure Payment</span>
+              </div>
+            </li>
+            <li class="policy-item">
+              <i class="bi bi-truck"></i>
+              <div class="policy-texts">
+                <strong>PAYMENT METHOD</strong>
+                <span>Secure Payment</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- ! policy end -->
+    </main>
 
     <!-- ! footer start -->
     <footer class="footer">
@@ -341,10 +343,10 @@
               <div class="footer-contact-bottom">
                 <div class="download-app">
                   <a href="#">
-                    <img src="assets/img/gooleplay.png" alt="" />
+                    <img src="../assets/img/gooleplay.png" alt="" />
                   </a>
                   <a href="#">
-                    <img src="assets/img/appstore.png" alt="" />
+                    <img src="../assets/img/appstore.png" alt="" />
                   </a>
                 </div>
                 <p class="privacy-text">
@@ -362,7 +364,7 @@
             <div class="brand-info">
               <div class="footer-logo">
                 <a href="#" class="logo">
-                  <img src="assets/img/RainyDays_Logo.png" alt="" />
+                  <img src="../assets/img/RainyDays_Logo.png" alt="" />
                 </a>
               </div>
               <div class="footer-desc">
@@ -456,7 +458,7 @@
               <p>© 2025 RainyDays. All rights reserved.</p>
             </div>
             <a href="#">
-              <img src="assets/img/card.png" alt="" />
+              <img src="../assets/img/card.png" alt="" />
             </a>
             <div class="footer-menu">
               <ul class="footer-menu-list">
@@ -481,6 +483,7 @@
       <input type="number" id="quantity" value="1" min="1" />
       <button id="add-to-cart">Add to cart</button>
     </div>
+
     <script src="../js/cart.js"></script>
     <p id="cart-message"></p>
   </body>

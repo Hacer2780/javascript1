@@ -43,7 +43,6 @@ p {
 }
 
 button {
-  /* margin-top: 20px; */
   cursor: pointer;
   border: none;
 }
@@ -54,7 +53,7 @@ button {
   line-height: 40px;
   border: 1px solid black;
   font-weight: 500;
-  transition: .2s ease all;
+  transition: 0.2s ease all;
 }
 
 .btn-sm {
@@ -74,8 +73,8 @@ button {
 }
 
 .btn-primary:hover {
- background-color: #fff;
- color: #1367ef;
+  background-color: #fff;
+  color: #1367ef;
 }
 
 textarea {
@@ -103,38 +102,38 @@ textarea:focus {
 .img-fluid {
   width: 100%;
 }
+
+
 /* !base end */
 
 /* ? responsive */
 
-
 @media (max-width: 1200px) {
-    .container {
-       max-width: 992px;
-    }
+  .container {
+    max-width: 992px;
   }
-  
-  @media (max-width: 992px) {
-    .container {
-       max-width: 768px;
-    }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 768px;
   }
-  
-  @media (max-width: 768px) {
-    .container {
-       max-width: 576px;
-    }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 576px;
   }
-  
-  @media (max-width: 576px) {
-    .container {
-       max-width: 400px;
-    }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 400px;
   }
-  
-  @media (max-width: 420px) {
-    .container {
-       max-width: 350px;
-    }
+}
+
+@media (max-width: 420px) {
+  .container {
+    max-width: 350px;
   }
-  
+}

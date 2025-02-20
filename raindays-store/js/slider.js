@@ -25,7 +25,6 @@ function currentSlide(n) {
   showSlide(slideIndex);
 }
 
-// Otomatik slider geçişi (Opsiyonel)
 setInterval(() => {
   plusSlide(1);
-}, 5000); // 5 saniyede bir slide değiştir
+}, 5000); 

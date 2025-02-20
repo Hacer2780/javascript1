@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
+    <title>Product</title>
     <!-- !Bostrap Icons CDN -->
     <link
       rel="stylesheet"
@@ -158,16 +158,27 @@
       <!-- !header end -->
     </header>
 
-    
     <main>
-        <div id="product-details">
-            <!-- Ürün bilgileri buraya JavaScript ile eklenecek -->
-        </div>
-    </main>
-
     
+      <div class="product-info" id="product-details">
+        <h2 id="product-title"></h2>
+        <div class="image-section">
+    
+          <div class="main-image-container">
+            <img id="main-product-image" src="" alt="Product Image" />
+          </div>
+          <div class="thumbnail-slider">
+            <button class="prev-btn">&#10094;</button>
+            <div class="thumbnails" id="thumbnail-container"></div>
+            <button class="next-btn">&#10095;</button>
+          </div>
+        </div>
 
-  
+        <p id="product-description"></p>
+        <p><strong>Price:</strong> <span id="product-price"></span> NOK</p>
+        <button id="add-to-cart">Add to Cart</button>
+      </div>
+    </main>
 
     <!-- ! policy start -->
     <section class="policy">
@@ -386,8 +397,6 @@
     </footer>
     <!-- ! footer end -->
     <script src="../js/product.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>
-
-
-

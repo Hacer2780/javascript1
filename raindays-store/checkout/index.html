@@ -4,20 +4,407 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout</title>
-    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- !Bostrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
     <header>
-      <h1>Shopping C</h1>
-      <a href="../index.html">Back to Home</a>
-    </header>
+      <!-- !header start -->
+      <header>
+        <div class="global-notification">
+          <div class="container">
+            <p>
+              Find high-quality rainwear for all seasons at Raindays
+              <a href="shop.html">SHOP NOW</a>
+            </p>
+          </div>
+        </div>
 
+        <div class="header-row">
+          <div class="container">
+            <div class="header-wrapper">
+              <div class="header-mobile">
+                <i class="bi bi-list" id="btn-menu"></i>
+              </div>
+              <div class="header-left">
+                <a href="" class="logo">
+                  <img src="../assets/img/RainyDays_Logo.png" alt=""
+                /></a>
+              </div>
+
+              <div class="header-center" id="sidebar">
+                <nav class="navigation">
+                  <ul class="menu-list">
+                    <li class="menu-list-item">
+                      <a href="../index.html" class="menu-link active">
+                        Home
+                        <i class="bi bi-chevron-down"></i>
+                      </a>
+                      <div class="menu-dropdown-wrapper">
+                        <ul class="menu-dropdown-content">
+                          <li>
+                            <a href="">Welcome</a>
+                          </li>
+                          <li>
+                            <a href="">Featured Collections</a>
+                          </li>
+                          <li>
+                            <a href="">New Arrivals</a>
+                          </li>
+                          <li>
+                            <a href="">Best Sellers</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="../product/index.html" class="menu-link">
+                        Products
+                        <i class="bi bi-chevron-down"></i>
+                      </a>
+                      <div class="menu-dropdown-wrapper">
+                        <ul class="menu-dropdown-content">
+                          <li>
+                            <a href="">Men`s Raincoats</a>
+                          </li>
+                          <li>
+                            <a href="">Women`s Raincoats</a>
+                          </li>
+                          <li>
+                            <a href="">Waterproof Jackets</a>
+                          </li>
+                          <li>
+                            <a href="">Trench Coats</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="../contact/contact.html" class="menu-link">
+                        Contact
+                        <i class="bi bi-chevron-down"></i>
+                      </a>
+                      <div class="menu-dropdown-wrapper">
+                        <ul class="menu-dropdown-content">
+                          <li>
+                            <a href="">Customer Support</a>
+                          </li>
+                          <li>
+                            <a href="">FAQs</a>
+                          </li>
+                          <li>
+                            <a href="">Store Locations</a>
+                          </li>
+                          <li>
+                            <a href="">Send a Message</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="../about/index.html" class="menu-link">
+                        About
+                        <i class="bi bi-chevron-down"></i>
+                      </a>
+                      <div class="menu-dropdown-wrapper">
+                        <ul class="menu-dropdown-content">
+                          <li>
+                            <a href="">Our Story</a>
+                          </li>
+                          <li>
+                            <a href="">Our Mission</a>
+                          </li>
+                          <li>
+                            <a href="">Why Choose Us?</a>
+                          </li>
+                          <li>
+                            <a href="">Sustainability</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+                <i class="bi-x-circle" id="close-sidebar"></i>
+              </div>
+
+              <div class="header-right">
+                <div class="header-right-links">
+                  <a href="../account/index.html" class="header-account">
+                    <i class="bi bi-person"></i>
+                  </a>
+                  <a href="#" class="search-button">
+                    <i class="bi bi-search"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-heart"></i>
+                  </a>
+                  <div class="header-cart">
+                    <a href="../cart/cart.html" class="header-cart-link">
+                      <i class="bi bi-bag"></i>
+                      <span class="header-cart-count">0</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- !header end -->
+    </header>
     <main>
-      <h2>Your Cart</h2>
-      <div id="cart-items">Cart items will be displayed here</div>
-      <p><strong>Total Price:</strong> <span id="total-price">0</span> NOK</p>
-      <button id="checkout-button">Proceed to Payment</button>
+      <!-- !checkout start -->
+      <section class="checkout-container">
+        <div class="container">
+          <div class="checkout-wrapper">
+            <div class="order-summary">
+              <h2>Order Summary</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody id="order-summary-items">
+                </tbody>
+              </table>
+              <p><strong>Subtotal:</strong> <span id="subtotal">$0.00</span></p>
+              <p>
+                <strong>Shipping:</strong>
+                <span id="shipping-cost">$20.00</span>
+              </p>
+              <p><strong>Total:</strong> <span id="total-price">$0.00</span></p>
+            </div>
+            <div class="payment-form">
+              <h2>Billing Details</h2>
+              <form id="checkout-form">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" required />
+
+                <label for="address">Address</label>
+                <input type="text" id="address" required />
+
+                <label for="city">City</label>
+                <input type="text" id="city" required />
+
+                <label for="postal-code">Postal Code</label>
+                <input type="text" id="postal-code" required />
+
+                <h2>Payment Details</h2>
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" required />
+
+                <label for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" placeholder="MM/YY" required />
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" required />
+
+                <button type="submit" id="place-order">Place Order</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- !checkout end -->
     </main>
+
+    <!-- ! Thank You Modal -->
+    <div id="thank-you-modal" class="modal">
+      <div class="modal-content">
+        <h2>Thank You!</h2>
+        <p>Your order has been placed successfully.</p>
+        <button id="close-modal">Close</button>
+        <button id="go-home">Go to Home</button>
+      </div>
+    </div>
+    <!-- ! Thank You Modal -->
+
+    <!-- ! footer start -->
+    <footer class="footer">
+      <div class="subscibe-row">
+        <div class="container">
+          <div class="footer-row-wrapper">
+            <div class="footer-subscribe-wrapper">
+              <div class="footer-subscribe">
+                <div class="footer-subscibe-top">
+                  <h3 class="subscribe-title">
+                    Get our emails for info on new items, sales and more.
+                  </h3>
+                  <p class="subscribe-desc">
+                    We`ll email you a voucher worth $10 off your first order
+                    over $50.
+                  </p>
+                </div>
+                <div class="footer-subscribe-bottom">
+                  <form>
+                    <input
+                      type="text"
+                      placeholder="Enter your email address."
+                    />
+                    <button class="btn">Subscribe</button>
+                  </form>
+                  <p class="privacy-text">
+                    By subscribing you agree to our
+                    <a href=""
+                      >Terms & Conditions and Pricacy & Cookies Policy.</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer-contact-wrapper">
+              <div class="footer-contact-top">
+                <h3 class="contact-title">
+                  Need help? <br />
+                  (+47) 123 456 78 90
+                </h3>
+                <p class="contact-desc">We are available 8.00am - 7:00pm</p>
+              </div>
+              <div class="footer-contact-bottom">
+                <div class="download-app">
+                  <a href="#">
+                    <img src="../assets/img/gooleplay.png" alt="" />
+                  </a>
+                  <a href="#">
+                    <img src="../assets/img/appstore.png" alt="" />
+                  </a>
+                </div>
+                <p class="privacy-text">
+                  <strong>Shopping App:</strong>Try our View inYour Room feture,
+                  manege registries and save payment info.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="widgets-row">
+        <div class="container">
+          <div class="footer-widgets">
+            <div class="brand-info">
+              <div class="footer-logo">
+                <a href="#" class="logo">
+                  <img src="../assets/img/RainyDays_Logo.png" alt="" />
+                </a>
+              </div>
+              <div class="footer-desc">
+                <p>
+                  Explore our collection of waterproof jackets <br />
+                  perfect for city streets or outdoor adventures.
+                </p>
+              </div>
+              <div class="footer-contact">
+                <p>
+                  <a href="tel:">(+47) 123 456 78 90</a> -
+                  <a href="mailto:">info@example.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="widget-nav-menu">
+              <h4>Information</h4>
+              <ul class="menu-list">
+                <li>
+                  <a href="">About Us</a>
+                </li>
+                <li>
+                  <a href="">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="">Shipping Policy</a>
+                </li>
+                <li>
+                  <a href="">Dropshipping</a>
+                </li>
+              </ul>
+            </div>
+            <div class="widget-nav-menu">
+              <h4>Account</h4>
+              <ul class="menu-list">
+                <li>
+                  <a href="">Dashboard</a>
+                </li>
+                <li>
+                  <a href="">My Orders</a>
+                </li>
+                <li>
+                  <a href="">Account Details</a>
+                </li>
+                <li>
+                  <a href="">Track My Orders</a>
+                </li>
+              </ul>
+            </div>
+            <div class="widget-nav-menu">
+              <h4>Shop</h4>
+              <ul class="menu-list">
+                <li>
+                  <a href="">Featured Collections</a>
+                </li>
+                <li>
+                  <a href="">Best Sellers</a>
+                </li>
+                <li>
+                  <a href="">Latest Products</a>
+                </li>
+                <li>
+                  <a href="">Sale Products</a>
+                </li>
+              </ul>
+            </div>
+            <div class="widget-nav-menu">
+              <h4>Categories</h4>
+              <ul class="menu-list">
+                <li>
+                  <a href="">Women</a>
+                </li>
+                <li>
+                  <a href="">Men</a>
+                </li>
+                <li>
+                  <a href="">Waterproof Jackets</a>
+                </li>
+                <li>
+                  <a href="">Trech Coats</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-row">
+        <div class="container">
+          <div class="footer-copyright">
+            <div class="site-copyright">
+              <p>© 2025 RainyDays. All rights reserved.</p>
+            </div>
+            <a href="#">
+              <img src="../assets/img/card.png" alt="" />
+            </a>
+            <div class="footer-menu">
+              <ul class="footer-menu-list">
+                <li class="list-item">
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li class="list-item">
+                  <a href="#">Terms and Conditions</a>
+                </li>
+                <li class="list-item">
+                  <a href="#">Returns Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ! footer end -->
 
     <script src="../js/checkout.js"></script>
   </body>

@@ -1,11 +1,8 @@
-console.log("cart.js is working!");
 
-// LocalStorage'dan sepet verilerini al
 function getCartItems() {
     return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
-// Function to update the cart count in the header
 function updateCartCount() {
     const cartItems = getCartItems();
     const cartCountElement = document.querySelector(".header-cart-count");
@@ -15,7 +12,6 @@ function updateCartCount() {
     }
 }
 
-// Sepeti görüntüle
 function displayCart() {
     const cartItems = getCartItems();
     const cartContainer = document.getElementById("cart-items");
@@ -32,7 +28,7 @@ function displayCart() {
         cartContainer.innerHTML = "<tr><td colspan='6'>Your cart is empty.</td></tr>";
         subtotalElement.textContent = "$0.00";
         totalPriceElement.textContent = "$0.00";
-        updateCartCount(); // Sayacı sıfıra güncelle
+        updateCartCount(); 
         return;
     }
 
@@ -56,7 +52,7 @@ function displayCart() {
 
     subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
 
-    // Ücretsiz kargo hesaplama
+   
     const freeShippingThreshold = 200;
     const remainingAmount = freeShippingThreshold - subtotal;
     
@@ -71,30 +67,26 @@ function displayCart() {
 
     totalPriceElement.textContent = `$${subtotal.toFixed(2)}`;
 
-    updateCartCount(); // Sepet güncellendiğinde sayacı da güncelle
+    updateCartCount(); 
 }
 
-// Sepetten ürün sil
 function removeFromCart(itemId) {
     let cartItems = getCartItems();
     cartItems = cartItems.filter(item => item.id !== itemId);
     localStorage.setItem("cart", JSON.stringify(cartItems));
     displayCart();
-    updateCartCount(); // Sayacı güncelle
+    updateCartCount(); 
 }
 
-// Ödeme işlemi
 function checkout() {
     alert("Thank you for your purchase! Your order has been placed.");
     localStorage.removeItem("cart");
     window.location.href = "confirmation/index.html";
 }
 
-// Sayfa yüklendiğinde sepeti göster ve sayacı güncelle
 document.addEventListener("DOMContentLoaded", function () {
     displayCart();
     updateCartCount();
 });
 
-// Event listener'lar
 document.getElementById("checkout-button").addEventListener("click", checkout);
