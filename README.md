@@ -11,31 +11,30 @@ Rainydays is a fictional e-commerce website for rain jackets, developed as a par
 - Fetch API (with async/await)
 
 ## Features
-- Product listing with images and details
-- Shopping cart system using localStorage
-- API integration using async/await
-- Error handling for failed API calls
-- Clear folder structure and modular JavaScript
-- Responsive design for mobile and desktop
+- ✅ Product listing fetched from Noroff API
+- ✅ Sorting by price (low-to-high / high-to-low)
+- ✅ Gender-based filtering
+- ✅ Product detail page with thumbnail gallery
+- ✅ Working "Add to Cart" system with `localStorage`
+- ✅ Cart page with item display and dynamic total calculation
+- ✅ Checkout page with user form and order summary
+- ✅ Confirmation page shown after placing order
+- ✅ Responsive design across devices
+- ✅ User-friendly feedback instead of alerts
+- ✅ Clean console, no dev logs
+- ✅ Visual progress bar for free shipping
+- ✅ Clear error handling for API failures
 
-## Feedback & Improvements
-### Positive Aspects:
-- Clean API integration using async/await
-- Proper use of localStorage for cart
-- Good modular separation of JavaScript files
-- Clear variable and function naming
-- Good error handling in fetch calls
-
-### Areas for Improvement:
-- Add a separate confirmation page after checkout
-- Complete the filter functionality (dropdowns exist but are not implemented)
-- Replace `alert()` with user-friendly feedback
-- Add loading indicators during API calls
-- Remove unnecessary `console.log` statements
-- Improve visual error messages for users
+## Improvements Made Based on Feedback
+- 🛠 Added a **separate confirmation page** with a friendly message
+- 🛠 Completed all **filter and sorting dropdowns**
+- 🛠 Replaced all `alert()`s with custom **user messages**
+- 🛠 Removed all unnecessary `console.log` statements
+- 🛠 Implemented **visual loading and error messages** in product lists
+- 🛠 Ensured **responsive behavior** on all key pages (cart, checkout, product)
 
 ## Live Site
-(Not deployed yet  coming soon)
+https://raindays.netlify.app/
 
 ## Author
 Hacer Aslan (GitHub: Hacer2780)
